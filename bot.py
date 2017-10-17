@@ -2,34 +2,34 @@
 import LineAlpha
 from LineAlpha.lib.curve.ttypes import *
 from datetime import datetime
-from imgurpython import ImgurClient
+#from imgurpython import ImgurClient
 import time,random,sys,json,codecs,threading,glob,os,subprocess,multiprocessing
 
 cl = LineAlpha.LINE()
-cl.login(token="EkeaUw67d8l1ksWaRIf9.VPm++2MfGJebW2j6OM3Qcq.N8RkI8fzMpTI6SkoxX1gg/yZcvpOp2GmCubdVUizk/I=")
+cl.login(token=" ")
 cl.loginResult()
 
 kk = LineAlpha.LINE()
-kk.login(token="EkGIlVSPEV2reF9yJPV5.YmK3RE2Gh7r1rsdbSBQibq.tKU1hvspJfPh6q1vCZfK8M8+U0/B8bWA3FsxqPS7pMM=")
+kk.login(token=" ")
 kk.loginResult()
 
 ki = LineAlpha.LINE()
-ki.login(token="EkRQbZZErjrx5uujDyza.84BapPm+V0nuPZ1PkEq6/G.V3aSBbMrbByVhVmOx9yrMp4S7FTJqw6cetH43/pOLEA=")
+ki.login(token=" ")
 ki.loginResult()
 
 kc = LineAlpha.LINE()
-kc.login(token="EkZvZ7Hlj7m84MOx8yI1.O00VsLTlmX6iq84iusWZ4q.ScFSA8A8Qsbfp5hguvZI5/MZ3JkFwkM9PIvGyqC7Pi4=")
+kc.login(token=" ")
 kc.loginResult()
 
 kg = LineAlpha.LINE()
-kg.login(token="EkpaxWwnqie6I5luusg7.St9fkz8GgIrWBhX+pEuGrW.Nho5QtsDAstF7T2MmUqC3ogYFUW7nw9yiu58tEARJZQ=")
+kg.login(token=" ")
 kg.loginResult()
 
 adm = cl
 
-# adm = LineAlpha.LINE()
-# adm.login(token="EkoRa4LbxQLepMyWmEMe.idD7rqcO/flZ+HSQWA/z7G.Z0Nd273uZOb1aD1eeTNA0FVr1/dN5ja7KuqCAyZlQFg=")
-# adm.loginResult()
+ #adm = LineAlpha.LINE()
+ #adm.login(token=" ")
+ #adm.loginResult()
 
 client_id = '511abc94ee71658'
 client_secret = '948a2fcdbf566c04bcce5f990e349ce795ee7460'
@@ -45,11 +45,11 @@ sys.setdefaultencoding('utf-8')
 album = None
 image_path = 'tmp/tmp.jpg'
 
-# kk=ki=kc=cl
+kk=ki=kc=cl
 
-helpMessage ="""[Ardh-] Bot(s)
+helpMessage ="""[Tree-] Bot(s)
 
-Use Prefix 「Ar」 to use the Bot(s)
+Use Prefix 「tr」 to use the Bot(s)
 Prefix is Case sensitive but the commands is not.
 
 [Gid] - Show Group ID
@@ -95,9 +95,9 @@ Bmid = ki.getProfile().mid
 Cmid = kc.getProfile().mid
 Dmid = kg.getProfile().mid
 Bots = [mid,Amid,Bmid,Cmid,Dmid]
-admin = ["u20377b4500a8f852f3fe1b2ac1af99ee"]
-staff = ["u20377b4500a8f852f3fe1b2ac1af99ee"]
-adminMID = "u20377b4500a8f852f3fe1b2ac1af99ee"
+admin = [" "]
+staff = [" "]
+adminMID = " "
 wait = {
     'contact':True,
     'autoJoin':True,
@@ -113,11 +113,11 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":True,
-    "cName":"[Ardh-]BOT1",
-    "cName2":"[Ardh-]BOT2",
-    "cName3":"[Ardh-]BOT3",
-    "cName4":"[Ardh-]BOT4",
-    "cName5":"[Ardh-]BOT5",
+    "cName1":"[tree-]BOT1",
+    "cName2":"[tree-]BOT2",
+    "cName3":"[tree-]BOT3",
+    "cName4":"[tree-]BOT4",
+    "cName5":"[tree-]BOT5",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -137,70 +137,68 @@ cancelinvite = {
 }
 
 bot1_name = {
-    "1" : "[Ardh-]BOT1",
-    "2" : "Ardh-]BOT1[",
-    "3" : "rdh-]BOT1[A",
-    "4" : "dh-]BOT1[Ar",
-    "5" : "h-]BOT1[Ard",
-    "6" : "-]BOT1[Ardh",
-    "7" : "]BOT1[Ardh-",
-    "8" : "BOT1[Ardh-]",
-    "9" : "OT1[Ardh-]B",
-    "10" : "T1[Ardh-]BO",
-    "11" : "1[Ardh-]BOT"
+    "1" : "[tree-]BOT1",
+    "2" : "ree-]BOT1[t",
+    "3" : "ee-]BOT1[tr",
+    "4" : "e-]BOT1[tre",
+    "5" : "-]BOT1[tree",
+    "6" : "-]BOT1[tree",
+    "7" : "]BOT1[tree-",
+    "8" : "BOT1[tree-]",
+    "9" : "OT1[tree-]B",
+    "10" : "T1[tree-]BO",
+    "11" : "1[tree-]BOT"
 }
 bot2_name = {
-    "1" : "[Ardh-]BOT2",
-    "2" : "Ardh-]BOT2[",
-    "3" : "rdh-]BOT2[A",
-    "4" : "dh-]BOT2[Ar",
-    "5" : "h-]BOT2[Ard",
-    "6" : "-]BOT2[Ardh",
-    "7" : "]BOT2[Ardh-",
-    "8" : "BOT2[Ardh-]",
-    "9" : "OT2[Ardh-]B",
-    "10" : "T2[Ardh-]BO",
-    "11" : "2[Ardh-]BOT"
+    "1" : "[tree-]BOT2",
+    "2" : "ree-]BOT2[t",
+    "3" : "ee-]BOT2[tr",
+    "4" : "e-]BOT2[tre",
+    "5" : "-]BOT2[tree",
+    "6" : "-]BOT2[tree",
+    "7" : "]BOT2[tree-",
+    "8" : "BOT2[tree-]",
+    "9" : "OT2[tree-]B",
+    "10" : "T2[tree-]BO",
+    "11" : "2[tree-]BOT""
 }
 bot3_name = {
-    "1" : "[Ardh-]BOT3",
-    "2" : "Ardh-]BOT3[",
-    "3" : "rdh-]BOT3[A",
-    "4" : "dh-]BOT3[Ar",
-    "5" : "h-]BOT3[Ard",
-    "6" : "-]BOT3[Ardh",
-    "7" : "]BOT3[Ardh-",
-    "8" : "BOT3[Ardh-]",
-    "9" : "OT3[Ardh-]B",
-    "10" : "T3[Ardh-]BO",
-    "11" : "3[Ardh-]BOT"
+    "1" : "[tree-]BOT3",
+    "2" : "ree-]BOT3[t",
+    "3" : "ee-]BOT3[tr",
+    "4" : "e-]BOT3[tre",
+    "5" : "-]BOT3[tree",
+    "6" : "-]BOT3[tree",
+    "7" : "]BOT3[tree-",
+    "8" : "BOT3[tree-]",
+    "9" : "OT3[tree-]B",
+    "10" : "T3[tree-]BO",
+    "11" : "3[tree-]BOT"
 }
 bot4_name = {
-    "1" : "[Ardh-]BOT4",
-    "2" : "Ardh-]BOT4[",
-    "3" : "rdh-]BOT4[A",
-    "4" : "dh-]BOT4[Ar",
-    "5" : "h-]BOT4[Ard",
-    "6" : "-]BOT4[Ardh",
-    "7" : "]BOT4[Ardh-",
-    "8" : "BOT4[Ardh-]",
-    "9" : "OT4[Ardh-]B",
-    "10" : "T4[Ardh-]BO",
-    "11" : "4[Ardh-]BOT"
-}
+    "1" : "[tree-]BOT4",
+    "2" : "ree-]BOT4[t",
+    "3" : "ee-]BOT4[tr",
+    "4" : "e-]BOT4[tre",
+    "5" : "-]BOT4[tree",
+    "6" : "-]BOT4[tree",
+    "7" : "]BOT4[tree-",
+    "8" : "BOT4[tree-]",
+    "9" : "OT4[tree-]B",
+    "10" : "T4[tree-]BO",
+    "11" : "4[tree-]BOT"
 bot5_name = {
-    "1" : "[Ardh-]BOT5",
-    "2" : "Ardh-]BOT5[",
-    "3" : "rdh-]BOT5[A",
-    "4" : "dh-]BOT5[Ar",
-    "5" : "h-]BOT5[Ard",
-    "6" : "-]BOT5[Ardh",
-    "7" : "]BOT5[Ardh-",
-    "8" : "BOT5[Ardh-]",
-    "9" : "OT5[Ardh-]B",
-    "10" : "T5[Ardh-]BO",
-    "11" : "5[Ardh-]BOT"
-}
+    "1" : "[tree-]BOT5",
+    "2" : "ree-]BOT5[t",
+    "3" : "ee-]BOT5[tr",
+    "4" : "e-]BOT5[tre",
+    "5" : "-]BOT5[tree",
+    "6" : "-]BOT5[tree",
+    "7" : "]BOT5[tree-",
+    "8" : "BOT5[tree-]",
+    "9" : "OT5[tree-]B",
+    "10" : "T5[tree-]BO",
+    "11" : "5[tree-]BOT"
 
 setTime = {}
 setTime = wait2['setTime']
@@ -599,19 +597,19 @@ def bot(op):
                 kg.sendMessage(msg)
                 print "[Command]Bot all executed"
 
-            elif msg.text in ["Ar Bot 1","Ar bot 1"]:
+            elif msg.text in ["tr Bot 1","tr bot 1"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
                 print "[Command]Bot 1 executed"
 
-            elif msg.text in ["Ar Bot 2","Ar bot 2"]:
+            elif msg.text in ["tr Bot 2","tr bot 2"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Amid}
                 kk.sendMessage(msg)
                 print "[Command]Bot 2 executed"
 
-            elif msg.text in ["Ar Bot 3","Ar bot 3"]:
+            elif msg.text in ["tr Bot 3","tr bot 3"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Bmid}
                 ki.sendMessage(msg)
@@ -623,7 +621,7 @@ def bot(op):
                 kc.sendMessage(msg)
                 print "[Command]Bot 4 executed"
 
-            elif msg.text in ["Ar Bot 5","Ar bot 5"]:
+            elif msg.text in ["tr Bot 5","tr bot 5"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Dmid}
                 kg.sendMessage(msg)
