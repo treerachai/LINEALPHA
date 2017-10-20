@@ -1,4 +1,4 @@
-# LINEALPHA Remake
+# LINEALPHA
 Forked from LINEALPHA [MerkKremont]
 
 fixing some error and delete unusable code 
