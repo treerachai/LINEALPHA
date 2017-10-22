@@ -32,9 +32,9 @@ adm.login(token=" ")
 adm.loginResult()
 
 client_id = '511abc94ee71658'
-client_secret = ''
-access_token = ' '
-refresh_token = ' '
+client_secret = '948a2fcdbf566c04bcce5f990e349ce795ee7460'
+access_token = '30181acf5583ad6a215b4f69e6e5c7bc5c66efdb'
+refresh_token = '4a6b3f983b96714c2e9b581edf86f86e0d681938'
 
 client = ImgurClient(client_id, client_secret, access_token, refresh_token)
 
@@ -95,9 +95,9 @@ Bmid = ki.getProfile().mid
 Cmid = kc.getProfile().mid
 Dmid = kg.getProfile().mid
 Bots = [mid,Amid,Bmid,Cmid,Dmid]
-admin = [" "]
-staff = [" "]
-adminMID = " "
+admin = ["u9489706a45fcf78bea076c6b77f7067d"]
+staff = ["ucd886b532f581aa4de98af5898719392"]
+adminMID = "u9489706a45fcf78bea076c6b77f7067d"
 wait = {
     'contact':True,
     'autoJoin':True,
