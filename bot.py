@@ -27,14 +27,14 @@ kg.loginResult()
 
 adm = cl
 
- #adm = LineAlpha.LINE()
- #adm.login(token=" ")
- #adm.loginResult()
+adm = LineAlpha.LINE()
+adm.login(token=" ")
+adm.loginResult()
 
 client_id = '511abc94ee71658'
-client_secret = '948a2fcdbf566c04bcce5f990e349ce795ee7460'
-access_token = '30181acf5583ad6a215b4f69e6e5c7bc5c66efdb'
-refresh_token = '4a6b3f983b96714c2e9b581edf86f86e0d681938'
+client_secret = ''
+access_token = ' '
+refresh_token = ' '
 
 client = ImgurClient(client_id, client_secret, access_token, refresh_token)
 
@@ -52,40 +52,40 @@ helpMessage ="""[Tree-] Bot(s)
 Use Prefix 「tr」 to use the Bot(s)
 Prefix is Case sensitive but the commands is not.
 
-[Gid] - Show Group ID
-[Mid all] - Show all the Bot(s) MID
-[Bot 1/2/3/4/5] - Shows the specific Bot MID
-[Bot all] - Show all the Bot(s) Contact
-[Bot 1/2/3/4/5] - Shows the specific Bot Contact
-[Yid] - Show your ID
-[Contact 「mid」] - Give Contact by MID
-[Join on/off] - Auto join group
-[Leave on/off] - Allows the bot to leave the group
+¤ Gid - Show Group ID
+¤ Mid all - Show all the Bot(s) MID
+¤ Bot 1/2/3/4/5 - Shows the specific Bot MID
+¤ Bot all  - Show all the Bot(s) Contact
+¤ Bot 1/2/3/4/5 - Shows the specific Bot Contact
+¤ Yid  - Show your ID
+¤ Contact 「mid」 - Give Contact by MID
+¤ Join on/off - Auto join group
+¤ Leave on/off - Allows the bot to leave the group
 
-[*] Command in the groups [*]
-[Ginfo] - Group Info
-[Banlist] - Check Banlist
-[Cancel] - Cancel all pending(s) invitation
-[Stalk 「ID」] - Upload lastest instagram picture from ID
+¤¤ Command in the groups ¤¤
+¤ Ginfo - Group Info
+¤ Banlist - Check Banlist
+¤ Cancel - Cancel all pending(s) invitation
+¤ Stalk 「ID」 - Upload lastest instagram picture from ID
 
-[*] Admin and Staff Commands [*]
-[Absen] - Check if bot is Online
-[Glink on/off] - Turn invitation link for group on/off
-[Cancel on/off] - Turn auto cancel invite on/off 
-[Gn 「group name」] - Change Group Name
-[Sp/Speed] - Check bot response speed
-[Random:「A」] - Randomize group name A times
-[Bc 「text」] - Let the bot send a text
+¤¤ Admin and Staff Commands ¤¤
+¤ Absen - Check if bot is Online
+¤ Glink on/off - Turn invitation link for group on/off
+¤ Cancel on/off - Turn auto cancel invite on/off 
+¤ Gn 「group name」 - Change Group Name
+¤ Sp/Speed - Check bot response speed
+¤ Random:「A」  - Randomize group name A times
+¤ Bc 「text」 - Let the bot send a text
 
-[*] Admin only Commands [*]
-[Cleanse] - Clear all members in the group
-[Bye all] - Bot Leave
-[Ban 「@」] - Ban By Tag
-[Unban 「@」] - Unban By Tag
-[Ban] - By Sharing Contact
-[Unban] - By Sharing Contact
-[Kill ban] - Kick all banned contact(s)
-[Staff add/remove @] - Add or Remove Staff By Tag
+¤¤ Admin only Commands ¤¤
+¤ Cleanse - Clear all members in the group
+¤ Bye all - Bot Leave
+¤ Ban 「@」 - Ban By Tag
+¤ Unban 「@」 - Unban By Tag
+¤ Ban - By Sharing Contact
+¤ Unban - By Sharing Contact
+¤ Kill ban - Kick all banned contact(s)
+¤ Staff add/remove [@] - Add or Remove Staff By Tag
 """
 
 KAC=[cl,ki,kk,kc,kg]
@@ -505,18 +505,18 @@ def bot(op):
                             cl.sendText(msg.to,"[displayName]:\n" + contact.displayName + "\n\n[MID]:\n" + msg.contentMetadata["mid"] + "\n\n[Status Message]:\n" + contact.statusMessage + "\n\n[Profile Picture]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n\n[Cover Picture]:\n" + str(cu))
                             print "Contact sent"
 #-----------------------[Help Section]------------------------                
-            elif msg.text in ["Ar /help","Ar /Help"]:
+            elif msg.text in ["Tr /help","Tr /Help"]:
                 if wait["lang"] == "JP":
                     random.choice(KAC).sendText(msg.to,helpMessage)
                     print "[Command]/help executed"
                 else:
                     cl.sendText(msg.to,helpt)
 #-----------------------[Group Name Section]------------------------
-            elif "Ar Gn " in msg.text:
+            elif "Tr Gn " in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in staff:
                         X = cl.getGroup(msg.to)
-                        X.name = msg.text.replace("Ar Gn ","")
+                        X.name = msg.text.replace("Tr Gn ","")
                         random.choice(KAC).updateGroup(X)
                         print "[Command]Gn executed"
                     else:
@@ -526,11 +526,11 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
                     print "Gn executed outside group chat"
-            elif "Ar gn " in msg.text:
+            elif "Tr gn " in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in staff:
                         X = cl.getGroup(msg.to)
-                        X.name = msg.text.replace("Ar gn ","")
+                        X.name = msg.text.replace("Tr gn ","")
                         random.choice(KAC).updateGroup(X)
                         print "[Command]Gn executed"
                     else:
@@ -541,9 +541,9 @@ def bot(op):
                     cl.sendText(msg.to,"It can't be used besides the group.")
                     print "Gn executed outside group chat"
 #-----------------------[Kick Section]------------------------
-            elif "Ar Kick " in msg.text:
+            elif "Tr Kick " in msg.text:
                 if msg.from_ in admin:
-                    midd = msg.text.replace("Ar Kick ","")
+                    midd = msg.text.replace("Tr Kick ","")
                     cl.sendText(msg.to,"Good bye.")
                     random.choice(KAC).kickoutFromGroup(msg.to,[midd])
                     print "[Command]Kick executed"
@@ -551,9 +551,9 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
                     print "[Error]Command denied - Admin permission required"
-            elif "Ar kick " in msg.text:
+            elif "Tr kick " in msg.text:
                 if msg.from_ in admin:
-                    midd = msg.text.replace("Ar kick ","")
+                    midd = msg.text.replace("Tr kick ","")
                     cl.sendText(msg.to,"Good bye.")
                     random.choice(KAC).kickoutFromGroup(msg.to,[midd])
                     print "[Command]Kick executed"
@@ -561,7 +561,7 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
                     print "[Error]Command denied - Admin permission required"
-            elif msg.text in ["Ar Kill ban","Ar kill ban"]:
+            elif msg.text in ["Tr Kill ban","Tr kill ban"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         group = cl.getGroup(msg.to)
@@ -583,7 +583,7 @@ def bot(op):
                         cl.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 #-----------------------[Send Profile Section]------------------------                    
-            elif msg.text in ["Ar Bot all","Ar bot all"]:
+            elif msg.text in ["Tr Bot all","Tr bot all"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
@@ -597,31 +597,31 @@ def bot(op):
                 kg.sendMessage(msg)
                 print "[Command]Bot all executed"
 
-            elif msg.text in ["tr Bot 1","tr bot 1"]:
+            elif msg.text in ["Tr Bot 1","Tr bot 1"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
                 print "[Command]Bot 1 executed"
 
-            elif msg.text in ["tr Bot 2","tr bot 2"]:
+            elif msg.text in ["Tr Bot 2","Tr bot 2"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Amid}
                 kk.sendMessage(msg)
                 print "[Command]Bot 2 executed"
 
-            elif msg.text in ["tr Bot 3","tr bot 3"]:
+            elif msg.text in ["Tr Bot 3","Tr bot 3"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Bmid}
                 ki.sendMessage(msg)
                 print "[Command]Bot 3 executed"
 
-            elif msg.text in ["Ar Bot 4","Ar bot 4"]:
+            elif msg.text in ["Tr Bot 4","Tr bot 4"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Cmid}
                 kc.sendMessage(msg)
                 print "[Command]Bot 4 executed"
 
-            elif msg.text in ["tr Bot 5","tr bot 5"]:
+            elif msg.text in ["Tr Bot 5","Tr bot 5"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Dmid}
                 kg.sendMessage(msg)
@@ -648,7 +648,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
 #-----------------------[Group link Section]------------------------                        
-            elif msg.text in ["Ar Glink off","Ar Link off","Ar glink off","Ar link off"]:
+            elif msg.text in ["Tr Glink off","Tr Link off","Tr glink off","Tr link off"]:
                 if msg.toType == 2:
                     if msg.from_ in staff:
                         X = cl.getGroup(msg.to)
@@ -671,7 +671,7 @@ def bot(op):
                         print "[Command]Glink off executed outside group chat"
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
-            elif msg.text in ["Ar Glink on","Ar Link on","Ar glink on","Ar link on"]:
+            elif msg.text in ["Tr Glink on","Tr Link on","Tr glink on","Tr link on"]:
                 if msg.toType == 2:
                     if msg.from_ in staff:
                         X = cl.getGroup(msg.to)
@@ -694,7 +694,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
 #-----------------------[Group info Section]------------------------
-            elif msg.text in ["Ar Ginfo","Ar ginfo"]:
+            elif msg.text in ["Tr Ginfo","Tr ginfo"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -722,45 +722,45 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
 #-----------------------[Bot/User/Group ID Section]------------------------
-            elif msg.text in ["Ar Gid","Ar gid"]:
+            elif msg.text in ["Tr Gid","Tr gid"]:
                 cl.sendText(msg.to,msg.to)
                 print "[Command]Gid executed"
             elif msg.text in ["Ar Mid all","Ar mid all"]:
-                cl.sendText(msg.to,"[Ardh-]Bot(s) ID\n[Ardh-]BOT1\n" + mid + "\n\n[Ardh-]BOT2\n" + Amid + "\n\n[Ardh-]BOT3\n" + Bmid + "\n\n[Ardh-]BOT4\n" + Cmid + "\n\n[Ardh-]BOT5\n" + Dmid)
+                cl.sendText(msg.to,"[Ardh-]Bot(s) ID\n[Tree-]BOT1\n" + mid + "\n\n[Tree-]BOT2\n" + Amid + "\n\n[Tree-]BOT3\n" + Bmid + "\n\n[Tree-]BOT4\n" + Cmid + "\n\n[Tree-]BOT5\n" + Dmid)
                 print "[Command]Mid executed"
-            elif msg.text in ["Ar Mid 1","Ar mid 1"]:
+            elif msg.text in ["Tr Mid 1","Tr mid 1"]:
                 cl.sendText(msg.to,mid)
                 print "[Command]Mid 1 executed"
-            elif msg.text in ["Ar Mid 2","Ar mid 2"]:
+            elif msg.text in ["Tr Mid 2","Tr mid 2"]:
                 kk.sendText(msg.to,Amid)
                 print "[Command]Mid 2 executed"
-            elif msg.text in ["Ar Mid 3","Ar mid 3"]:
+            elif msg.text in ["Tr Mid 3","Tr mid 3"]:
                 ki.sendText(msg.to,Bmid)
                 print "[Command]Mid 3 executed"
-            elif msg.text in ["Ar Mid 4","Ar mid 4"]:
+            elif msg.text in ["Tr Mid 4","Tr mid 4"]:
                 kc.sendText(msg.to,Cmid)
                 print "[Command]Mid 4 executed"
-            elif msg.text in ["Ar Mid 5","Ar mid 5"]:
+            elif msg.text in ["Tr Mid 5","Tr mid 5"]:
                 kc.sendText(msg.to,Dmid)
                 print "[Command]Mid 5 executed"
-            elif msg.text in ["Ar Yid","Ar yid"]:
+            elif msg.text in ["Tr Yid","Tr yid"]:
                 cl.sendText(msg.to,msg.from_)
                 print "[Command]Yid executed"
 #-----------------------[Send Contact Section]------------------------
-            elif "Ar Contact" in msg.text:
-                mmid = msg.text.replace("Ar Contact ","")
+            elif "Tr Contact" in msg.text:
+                mmid = msg.text.replace("Tr Contact ","")
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
                 cl.sendMessage(msg)
                 print "[Command]Contact executed"
-            elif "Ar contact" in msg.text:
-                mmid = msg.text.replace("Ar contact ","")
+            elif "Tr contact" in msg.text:
+                mmid = msg.text.replace("Tr contact ","")
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
                 cl.sendMessage(msg)
                 print "[Command]Contact executed"
 #-----------------------[Auto Join Section]------------------------
-            elif msg.text in ["Ar Join on","Ar join on"]:
+            elif msg.text in ["Tr Join on","Tr join on"]:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Auto join already on")
@@ -776,7 +776,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Auto join turned on")
                         print "Join on executed"
-            elif msg.text in ["Ar Join off","Ar join off"]:
+            elif msg.text in ["Tr Join off","Tr join off"]:
                 if wait["autoJoin"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Auto join already off")
@@ -793,7 +793,7 @@ def bot(op):
                         cl.sendText(msg.to,"Auto join turned off")
                         print "[Command]Join off executed"
 #-----------------------[Group Url Section]------------------------
-            elif msg.text in ["Ar Gurl","Ar gurl"]:
+            elif msg.text in ["Tr Gurl","Tr gurl"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         x = cl.getGroup(msg.to)
@@ -814,7 +814,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
 #-----------------------[All bots join group Section]------------------------
-            elif msg.text in ["Ar Join all","Ar join all"]:
+            elif msg.text in ["Tr Join all","Tr join all"]:
                 if msg.from_ in admin:
                     try:
                         ginfo = cl.getGroup(msg.to)
@@ -838,7 +838,7 @@ def bot(op):
                     cl.sendText(msg.to,"Admin permission required.")
                     print "[Error]Command denied - Admin permission required"
 #-----------------------[Bot(s) Leave Section]------------------------
-            elif msg.text in ["Ar Bye all","Ar bye all"]:
+            elif msg.text in ["Tr Bye all","Tr bye all"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         ginfo = cl.getGroup(msg.to)
@@ -856,7 +856,7 @@ def bot(op):
                         cl.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 
-            elif msg.text in ["Ar Bye bot 1","Ar bye bot 1"]:
+            elif msg.text in ["Tr Bye bot 1","Tr bye bot 1"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         ginfo = cl.getGroup(msg.to)
@@ -870,7 +870,7 @@ def bot(op):
                         cl.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 
-            elif msg.text in ["Ar Bye bot 2","Ar bye bot 2"]:
+            elif msg.text in ["Tr Bye bot 2","Tr bye bot 2"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         ginfo = kk.getGroup(msg.to)
@@ -884,7 +884,7 @@ def bot(op):
                         kk.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 
-            elif msg.text in ["Ar Bye bot 3","Ar bye bot 3"]:
+            elif msg.text in ["Tr Bye bot 3","Tr bye bot 3"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         ginfo = ki.getGroup(msg.to)
@@ -898,7 +898,7 @@ def bot(op):
                         ki.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 
-            elif msg.text in ["Ar Bye bot 4","Ar bye bot 4"]:
+            elif msg.text in ["Tr Bye bot 4","Tr bye bot 4"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         ginfo = kc.getGroup(msg.to)
@@ -912,7 +912,7 @@ def bot(op):
                         kc.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 
-            elif msg.text in ["Ar Bye bot 5","Ar bye bot 5"]:
+            elif msg.text in ["Tr Bye bot 5","Tr bye bot 5"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         ginfo = kc.getGroup(msg.to)
@@ -926,7 +926,7 @@ def bot(op):
                         kg.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 #-----------------------[Cleanse Section (USE AT YOUR OWN RISK!)]------------------------
-            elif msg.text in ["Ar Cleanse","Ar cleanse"]:
+            elif msg.text in ["Tr Cleanse","Tr cleanse"]:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Cleanse executing"
@@ -965,7 +965,7 @@ def bot(op):
                         cl.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
 #-----------------------[Ban/Unban Section]------------------------
-            elif "Ar Ban @" in msg.text:
+            elif "Tr Ban @" in msg.text:
                     if msg.toType == 2:
                         if msg.from_ in admin:
                             print "[Command]Ban executed"
@@ -993,11 +993,11 @@ def bot(op):
                         else:
                             cl.sendText(msg.to,"Command denied.")
                             cl.sendText(msg.to,"Admin permission required.")
-            elif "Ar Unban @" in msg.text:
+            elif "Tr Unban @" in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Unban executed"
-                        _name = msg.text.replace("Ar Unban @","")
+                        _name = msg.text.replace("Tr Unban @","")
                         _nametarget = _name.rstrip('  ')
                         gs = ki.getGroup(msg.to)
                         gs = kk.getGroup(msg.to)
@@ -1021,11 +1021,11 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Command denied.")
                         cl.sendText(msg.to,"Admin permission required.")
-            elif "Ar ban @" in msg.text:
+            elif "Tr ban @" in msg.text:
                     if msg.toType == 2:
                         if msg.from_ in admin:
                             print "[Command]Ban executed"
-                            _name = msg.text.replace("Ar ban @","")
+                            _name = msg.text.replace("Tr ban @","")
                             _nametarget = _name.rstrip('  ')
                             gs = ki.getGroup(msg.to)
                             gs = kk.getGroup(msg.to)
@@ -1049,11 +1049,11 @@ def bot(op):
                         else:
                             cl.sendText(msg.to,"Command denied.")
                             cl.sendText(msg.to,"Admin permission required.")
-            elif "Ar unban @" in msg.text:
+            elif "Tr unban @" in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Unban executed"
-                        _name = msg.text.replace("Ar unban @","")
+                        _name = msg.text.replace("Tr unban @","")
                         _nametarget = _name.rstrip('  ')
                         gs = ki.getGroup(msg.to)
                         gs = kk.getGroup(msg.to)
@@ -1086,7 +1086,7 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
                     print "[Error]Command denied - Admin permission required"
-            elif msg.text in ["Ar Unban","Ar unban"]:
+            elif msg.text in ["Tr Unban","Tr unban"]:
                 if msg.from_ in admin:
                     wait["dblacklist"] = True
                     cl.sendText(msg.to,"Send Contact to Unban")
@@ -1095,7 +1095,7 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
                     print "[Error]Command denied - Admin permission required"
-            elif msg.text in ["Ar Banlist","Ar banlist"]:
+            elif msg.text in ["Tr Banlist","Tr banlist"]:
                 if wait["blacklist"] == {}:
                     cl.sendText(msg.to,"No user is Blacklisted")
                 else:
@@ -1106,18 +1106,18 @@ def bot(op):
                     cl.sendText(msg.to,mc)
                     print "[Command]Banlist executed"
 #-----------------------[Bot Speak Section]------------------------
-            elif "Ar Bc " in msg.text:
+            elif "Tr Bc " in msg.text:
                 if msg.from_ in staff:
-                    bctxt = msg.text.replace("Ar Bc ","")
+                    bctxt = msg.text.replace("Tr Bc ","")
                     random.choice(KAC).sendText(msg.to,(bctxt))
                     print "[Command]Bc executed"
                 else:
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
-            elif "Ar bc " in msg.text:
+            elif "Tr bc " in msg.text:
                 if msg.from_ in staff:
-                    bctxt = msg.text.replace("Ar bc ","")
+                    bctxt = msg.text.replace("Tr bc ","")
                     cl.sendText(msg.to,(bctxt))
                     print "[Command]Bc executed"
                 else:
@@ -1125,7 +1125,7 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 #-----------------------[Bot speed test Section]------------------------
-            elif msg.text in ["Ar Sp all","Ar Speed all","Ar sp all","Ar speed all"]:
+            elif msg.text in ["Tr Sp all","Tr Speed all","Tr sp all","Tr speed all"]:
                 if msg.from_ in staff:
 
                     start = time.time()
@@ -1158,7 +1158,7 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Sp 1","Ar Speed 1","Ar sp 1","Ar speed 1"]:
+            elif msg.text in ["Tr Sp 1","Tr Speed 1","Tr sp 1","Tr speed 1"]:
                 if msg.from_ in staff: 
                     start = time.time()                   
                     cl.sendText(msg.to, "Progress...")                    
@@ -1170,7 +1170,7 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Sp 2","Ar Speed 2","Ar sp 2","Ar speed 2"]:
+            elif msg.text in ["Tr Sp 2","Tr Speed 2","Tr sp 2","Tr speed 2"]:
                 if msg.from_ in staff:
                     start = time.time()                    
                     kk.sendText(msg.to, "Progress...")                    
@@ -1182,7 +1182,7 @@ def bot(op):
                     kk.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Sp 3","Ar Speed 3","Ar sp 3","Ar speed 3"]:
+            elif msg.text in ["Tr Sp 3","Tr Speed 3","Tr sp 3","Tr speed 3"]:
                 if msg.from_ in staff:
                     start = time.time()                   
                     ki.sendText(msg.to, "Progress...")                    
@@ -1194,7 +1194,7 @@ def bot(op):
                     ki.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Sp 4","Ar Speed 4","Ar sp 4","Ar speed 4"]:
+            elif msg.text in ["Tr Sp 4","Tr Speed 4","Tr sp 4","Tr speed 4"]:
                 if msg.from_ in staff: 
                     start = time.time()                   
                     kc.sendText(msg.to, "Progress...")                    
@@ -1206,7 +1206,7 @@ def bot(op):
                     kc.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Sp 5","Ar Speed 5","Ar sp 5","Ar speed 5"]:
+            elif msg.text in ["Tr Sp 5","Tr Speed 5","Tr sp 5","Tr speed 5"]:
                 if msg.from_ in staff:    
                     start = time.time()                
                     kg.sendText(msg.to, "Progress...")                                       
@@ -1218,7 +1218,7 @@ def bot(op):
                     kc.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 #-----------------------[Auto Cancel Section]------------------------
-            elif "Ar staff add @" in msg.text:
+            elif "Tr staff add @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff add executing"
                     _name = msg.text.replace("Ar staff add @","")
@@ -1246,10 +1246,10 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
 
-            elif "Ar Staff add @" in msg.text:
+            elif "Tr Staff add @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff add executing"
-                    _name = msg.text.replace("Ar Staff add @","")
+                    _name = msg.text.replace("Tr Staff add @","")
                     _nametarget = _name.rstrip('  ')
                     gs = cl.getGroup(msg.to)
                     gs = ki.getGroup(msg.to)
@@ -1274,10 +1274,10 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
 
-            elif "Ar staff remove @" in msg.text:
+            elif "Tr staff remove @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff remove executing"
-                    _name = msg.text.replace("Ar staff remove @","")
+                    _name = msg.text.replace("Tr staff remove @","")
                     _nametarget = _name.rstrip('  ')
                     gs = cl.getGroup(msg.to)
                     gs = ki.getGroup(msg.to)
@@ -1302,7 +1302,7 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
 
-            elif "Ar Staff remove @" in msg.text:
+            elif "Tr Staff remove @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff remove executing"
                     _name = msg.text.replace("Ar Staff remove @","")
