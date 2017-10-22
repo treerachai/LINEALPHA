@@ -969,7 +969,7 @@ def bot(op):
                     if msg.toType == 2:
                         if msg.from_ in admin:
                             print "[Command]Ban executed"
-                            _name = msg.text.replace("Ar Ban @","")
+                            _name = msg.text.replace("Tr Ban @","")
                             _nametarget = _name.rstrip('  ')
                             gs = ki.getGroup(msg.to)
                             gs = kk.getGroup(msg.to)
@@ -1077,7 +1077,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Command denied.")
                         cl.sendText(msg.to,"Admin permission required.")
-            elif msg.text in ["Ar Ban","Ar ban"]:
+            elif msg.text in ["Tr Ban","Tr ban"]:
                 if msg.from_ in admin:
                     wait["wblacklist"] = True
                     cl.sendText(msg.to,"Send Contact to Ban")
@@ -1221,7 +1221,7 @@ def bot(op):
             elif "Tr staff add @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff add executing"
-                    _name = msg.text.replace("Ar staff add @","")
+                    _name = msg.text.replace("Tr staff add @","")
                     _nametarget = _name.rstrip('  ')
                     gs = cl.getGroup(msg.to)
                     gs = ki.getGroup(msg.to)
@@ -1305,7 +1305,7 @@ def bot(op):
             elif "Tr Staff remove @" in msg.text:
                 if msg.from_ in admin:
                     print "[Command]Staff remove executing"
-                    _name = msg.text.replace("Ar Staff remove @","")
+                    _name = msg.text.replace("Tr Staff remove @","")
                     _nametarget = _name.rstrip('  ')
                     gs = cl.getGroup(msg.to)
                     gs = ki.getGroup(msg.to)
@@ -1330,7 +1330,7 @@ def bot(op):
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Admin permission required.")
 
-            elif msg.text in ["Ar Stafflist","Ar stafflist"]:
+            elif msg.text in ["Tr Stafflist","Tr stafflist"]:
                 if staff == []:
                     cl.sendText(msg.to,"The stafflist is empty")
                 else:
@@ -1341,7 +1341,7 @@ def bot(op):
                     cl.sendText(msg.to,mc)
                     print "[Command]Stafflist executed"
 #-----------------------[Auto cancel Section]------------------------
-            elif msg.text in ["Ar Cancel off","Ar cancel off"]:
+            elif msg.text in ["Tr Cancel off","Tr cancel off"]:
                 if msg.from_ in staff:
                     if cancelinvite["autoCancel"] == True:
                         cancelinvite["autoCancel"] = False
@@ -1355,7 +1355,7 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Cancel on","Ar cancel on"]:
+            elif msg.text in ["Tr Cancel on","Tr cancel on"]:
                 if msg.from_ in staff:
                     if cancelinvite["autoCancel"] == False:
                         cancelinvite["autoCancel"] = True
@@ -1369,7 +1369,7 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Url off","Ar url off"]:
+            elif msg.text in ["Tr Url off","Tr url off"]:
                 if msg.from_ in staff:
                     if cancelinvite["autoCancelUrl"] == True:
                         cancelinvite["autoCancelUrl"] = False
@@ -1383,7 +1383,7 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Url on","Ar url on"]:
+            elif msg.text in ["Tr Url on","Tr url on"]:
                 if msg.from_ in staff:
                     if cancelinvite["autoCancelUrl"] == True:
                         cancelinvite["autoCancelUrl"] = False
@@ -1397,10 +1397,10 @@ def bot(op):
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 #-----------------------[Misc Section]-------------------------------------------
-            elif "Ar random:" in msg.text:
+            elif "Tr random:" in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in staff:
-                        strnum = msg.text.replace("Ar random:","")
+                        strnum = msg.text.replace("Tr random:","")
                         source_str = 'abcdefghijklmnopqrstuvwxyz1234567890@:;./_][!&%$#)(=~^|'
                         try:
                             num = int(strnum)
@@ -1418,10 +1418,10 @@ def bot(op):
                         cl.sendText(msg.to,"Staff or higher permission required.")
                         print "[Error]Command denied - staff or higher permission required"
 
-            elif "Ar Random:" in msg.text:
+            elif "Tr Random:" in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in staff:
-                        strnum = msg.text.replace("Ar Random:","")
+                        strnum = msg.text.replace("Tr Random:","")
                         source_str = 'abcdefghijklmnopqrstuvwxyz1234567890@:;./_][!&%$#)(=~^|'
                         try:
                             num = int(strnum)
@@ -1439,20 +1439,20 @@ def bot(op):
                         cl.sendText(msg.to,"Staff or higher permission required.")
                         print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Absen","Ar absen"]:
+            elif msg.text in ["Tr Tree","Tr tree"]:
                 if msg.from_ in staff:
                     cl.sendText(msg.to, "Hadir")
                     kk.sendText(msg.to, "Hadir")
                     ki.sendText(msg.to, "Hadir")
                     kc.sendText(msg.to, "Hadir")
                     kg.sendText(msg.to, "Hadir")
-                    print "[Command]Absen executed"
+                    print "[Command]Tree executed"
                 else:
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"Staff or higher permission required.")
                     print "[Error]Command denied - staff or higher permission required"
 
-            elif msg.text in ["Ar Kernel","Ar kernel"]:
+            elif msg.text in ["Tr Kernel","Tr kernel"]:
                 if msg.from_ in admin:
                     botKernel = subprocess.Popen(["uname","-svmo"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to, botKernel)
@@ -1462,9 +1462,9 @@ def bot(op):
                     cl.sendText(msg.to,"Admin permission required.")
                     print "[Error]Command denied - Admin permission required"
 
-            # elif "Ar Stalk " in msg.text:
+            # elif "Tr Stalk " in msg.text:
             #     print "[Command]Stalk executing"
-            #     stalkID = msg.text.replace("Ar Stalk ","")
+            #     stalkID = msg.text.replace("Tr Stalk ","")
             #     subprocess.call(["instaLooter",stalkID,"tmp/","-n","1"])   
             #     files = glob.glob("tmp/*.jpg")
             #     for file in files:
@@ -1478,9 +1478,9 @@ def bot(op):
             #         cl.sendText(msg.to, format(image['link']))
             #         print "[Command]Stalk executed - success"
 
-            # elif "Ar stalk " in msg.text:
+            # elif "Tr stalk " in msg.text:
             #     print "[Command]Stalk executing"
-            #     stalkID = msg.text.replace("Ar stalk ","")
+            #     stalkID = msg.text.replace("Tr stalk ","")
             #     subprocess.call(["instaLooter",stalkID,"tmp/","-n","1"])   
             #     files = glob.glob("tmp/*.jpg")
             #     for file in files:
@@ -1495,11 +1495,11 @@ def bot(op):
             #         subprocess.call(["sudo","rm","-rf","tmp/tmp.jpg"])
             #         print "[Command]Stalk executed - success"
 
-            elif "Ar Add @" in msg.text:
+            elif "Tr Add @" in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Add executing"
-                        _name = msg.text.replace("Ar Add @","")
+                        _name = msg.text.replace("Tr Add @","")
                         _nametarget = _name.rstrip('  ')
                         gs = ki.getGroup(msg.to)
                         gs = kk.getGroup(msg.to)
@@ -1521,11 +1521,11 @@ def bot(op):
                         cl.sendText(msg.to,"Command denied.")
                         cl.sendText(msg.to,"Admin permission required.")
 
-            elif "Ar add @" in msg.text:
+            elif "Tr add @" in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[Command]Add executed"
-                        _name = msg.text.replace("Ar Add @","")
+                        _name = msg.text.replace("Tr Add @","")
                         _nametarget = _name.rstrip('  ')
                         gs = ki.getGroup(msg.to)
                         gs = kk.getGroup(msg.to)
@@ -1548,7 +1548,7 @@ def bot(op):
                         cl.sendText(msg.to,"Command denied.")
                         cl.sendText(msg.to,"Admin permission required.")
                         
-            elif msg.text in ["Ar Like", "Ar like"]:
+            elif msg.text in ["Tr Like", "Tr like"]:
                 if msg.from_ in staff:
                     print "[Command]Like executed"
                     cl.sendText(msg.to,"Trying to Like post(s) from staff")
@@ -1558,7 +1558,7 @@ def bot(op):
                         pass
 
 
-            elif msg.text in ["Ar Tagall", "Ar tagall"]:
+            elif msg.text in ["Tr Tagall", "Tr tagall"]:
                 group = cl.getGroup(msg.to)
                 msg_appended = ""
                 mem = [contact.mid for contact in group.members]                
