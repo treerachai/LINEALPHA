@@ -160,7 +160,7 @@ bot2_name = {
     "8" : "BOT2T[Tree-]",
     "9" : "OT2[Tree-]B",
     "10" : "T2[Tree-]BO",
-    "11" : "2[Tree-]BOT""
+    "11" : "2[Tree-]BOT"
 }
 bot3_name = {
     "1" : "[Tree-]BOT3",
