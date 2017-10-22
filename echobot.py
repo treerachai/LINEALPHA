@@ -52,45 +52,42 @@ sys.setdefaultencoding('utf-8')
 
 # kk=ki=kc=cl
 
-helpMessage ="""[Ardh-] Bot(s) Command list:
+helpMessage ="""[Tree-] Bot(s) Command list:
 
 Use Prefix 「Ar」 to use the Bot(s)
 Prefix is Case sensitive but the commands is not.
 
-[Gid] - Show Group ID
-[Mid all] - Show all the Bot(s) MID
-[Bot 1/2/3/4/5] - Shows the specific Bot MID
-[Bot all] - Show all the Bot(s) Contact
-[Bot 1/2/3/4/5] - Shows the specific Bot Contact
-[Yid] - Show your ID
-[Contact 「mid」] - Give Contact by MID
-[Join on/off] - Auto join group
-[Leave on/off] - Allows the bot to leave the group
-
-[*] Command in the groups [*]
-[Ginfo] - Group Info
-[Banlist] - Check Banlist
-[Cancel] - Cancel all pending(s) invitation
-[Stalk 「ID」] - Upload lastest instagram picture from ID
-
-[*] Admin and Staff Commands [*]
-[Absen] - Check if bot is Online
-[Glink on/off] - Turn invitation link for group on/off
-[Cancel on/off] - Turn auto cancel invite on/off 
-[Gn 「group name」] - Change Group Name
-[Sp/Speed] - Check bot response speed
-[Random:「A」] - Randomize group name A times
-[Bc 「text」] - Let the bot send a text
-
-[*] Admin only Commands [*]
-[Cleanse] - Clear all members in the group
-[Bye all] - Bot Leave
-[Ban 「@」] - Ban By Tag
-[Unban 「@」] - Unban By Tag
-[Ban] - By Sharing Contact
-[Unban] - By Sharing Contact
-[Kill ban] - Kick all banned contact(s)
-[Staff add/remove @] - Add or Remove Staff By Tag
+¤ Gid - Show Group ID
+¤ Mid all - Show all the Bot(s) MID
+¤ Bot 1/2/3/4/5 - Shows the specific Bot MID
+¤ Bot all  - Show all the Bot(s) Contact
+¤ Bot 1/2/3/4/5 - Shows the specific Bot Contact
+¤ Yid  - Show your ID
+¤ Contact 「mid」 - Give Contact by MID
+¤ Join on/off - Auto join group
+¤ Leave on/off - Allows the bot to leave the group
+¤¤ Command in the groups ¤¤
+¤ Ginfo - Group Info
+¤ Banlist - Check Banlist
+¤ Cancel - Cancel all pending(s) invitation
+¤ Stalk 「ID」 - Upload lastest instagram picture from ID
+¤¤ Admin and Staff Commands ¤¤
+¤ Absen - Check if bot is Online
+¤ Glink on/off - Turn invitation link for group on/off
+¤ Cancel on/off - Turn auto cancel invite on/off 
+¤ Gn 「group name」 - Change Group Name
+¤ Sp/Speed - Check bot response speed
+¤ Random:「A」  - Randomize group name A times
+¤ Bc 「text」 - Let the bot send a text
+¤¤ Admin only Commands ¤¤
+¤ Cleanse - Clear all members in the group
+¤ Bye all - Bot Leave
+¤ Ban 「@」 - Ban By Tag
+¤ Unban 「@」 - Unban By Tag
+¤ Ban - By Sharing Contact
+¤ Unban - By Sharing Contact
+¤ Kill ban - Kick all banned contact(s)
+¤ Staff add/remove [@] - Add or Remove Staff By Tag
 """
 
 KAC=[cl,ki,kk,kc,kg]
